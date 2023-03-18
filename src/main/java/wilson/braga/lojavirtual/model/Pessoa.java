@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Email;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -25,7 +26,8 @@ public abstract class Pessoa implements Serializable {
 
 	@Column(nullable = false)
 	private String nome;
-
+	
+	@Email
 	@Column(nullable = false)
 	private String email;
 
